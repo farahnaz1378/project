@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div class="theme-dark">
+        <button class="btn-change-theme" data-color="bg-dark"><b>theme dark</b></button>
+
+    </div>
+
+    <div class="theme-red">
+
+        <button class="btn-change-theme" data-color="bg-red"><b> theme red</b></button>
+
+    </div>
+    <div class="theme-blue">
+
+        <button class="btn-change-theme" data-color="bg-blue"><b> theme blue</b></button>
+    </div>
+
+    <script>
+
+        let buttons = document.getElementsByClassName("btn-change-theme");
+        let theme_color = 'bg-red';
+
+        for (let i = 0; i < buttons.length; i++) {
+
+            buttons[i].addEventListener("click",
+                function (event) {
+                    event.preventDefault();
+                    let body = document.getElementsByTagName('BODY')[0];
+                    body.classList.remove(theme_color);
+                  theme_color = event.target.getAttribute('data-color');
+
+                    body.classList.add(theme_color);
+
+
+
+                });
+
+        }
+
+
+
+        // let bg_color = 'bg-red';
+        // $(document).ready(function () {
+
+        //     $(".btn-change-them").click(function () {
+        //         $('body').removeClass(bg_color);
+        //          bg_color = $(this).data('color');
+
+        //         $('body').addClass(bg_color);
+        //     });
+        // });
+
+
+    </script>
+</body>
+
+</html>
